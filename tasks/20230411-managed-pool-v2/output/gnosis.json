@@ -1,9 +1,9 @@
 {
-  "ManagedPoolAddRemoveTokenLib": "0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4",
-  "CircuitBreakerLib": "0x54f8F9d28e26Fa5864cfA80f50A5Df95fD85f46a",
-  "ManagedPoolAmmLib": "0xAcf05BE5134d64d150d153818F8C67EE36996650",
-  "ExternalWeightedMath": "0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC",
-  "RecoveryModeHelper": "0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE",
-  "ManagedPoolFactory": "0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025",
-  "MockManagedPool": "0xc061361fDa32fF5b65F7D98aCC9a87349d3F0768"
+  "ManagedPoolAddRemoveTokenLib": "0x522f57D8DFB03337A0bFff540C3D84e3d8d0ddF0",
+  "CircuitBreakerLib": "0x937D496a12C5164EFeA016625D711CCc2f90B7F2",
+  "ManagedPoolAmmLib": "0x0AEc0267753c1585d035338EE92E9F3BB037d23f",
+  "ExternalWeightedMath": "0xb5248beE5BE5af0C8c70c56a98568EEc49f262Bd",
+  "RecoveryModeHelper": "0x5FAEF99Dc409fff6eCF6Db113ee6fb5b9Afb3c3E",
+  "ManagedPoolFactory": "0xd4BCD42fE8Ea66eA0e2c70FdE16BE672FdEFe93C",
+  "MockManagedPool": "0x1E2ECeC354Bac64E15364ae9A3C28a7E25C6D2eb"
 }

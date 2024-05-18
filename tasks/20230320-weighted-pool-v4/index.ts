@@ -57,12 +57,13 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
       ).wait();
       const event = expectEvent.inReceipt(poolCreationReceipt, 'PoolCreated');
       const mockPoolAddress = event.args.pool;
-
+      console.log(mockPoolAddress);
       await saveContractDeploymentTransactionHash(mockPoolAddress, poolCreationReceipt.transactionHash, task.network);
       await task.save({ MockWeightedPool: mockPoolAddress });
     }
 
     const mockPool = await task.instanceAt('WeightedPool', task.output()['MockWeightedPool']);
+    console.log(mockPool.address);
 
     // In order to verify the Pool's code, we need to complete its constructor arguments by computing the factory
     // provided arguments (pause durations).

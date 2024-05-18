@@ -17,7 +17,7 @@ export const NETWORKS = [
   'zkevm',
   'sepolia',
   'base',
-  'fantom',
+  'fantom'
 ];
 
 export type Network = (typeof NETWORKS)[number];

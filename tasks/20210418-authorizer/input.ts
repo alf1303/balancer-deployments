@@ -19,7 +19,7 @@ export default {
     admin: '0xFB2ac3989B6AD0e043a8958004484d6BAAb2c6Ab',
   },
   gnosis: {
-    admin: '0x2a5AEcE0bb9EfFD7608213AE1745873385515c18',
+    admin: '0x23afD46b2d63e6BB406a70A3d8236f654D4b12c7',
   },
   bsc: {
     admin: '0x58099b94e660bBe19848547F6c5d76DcA7282E45',

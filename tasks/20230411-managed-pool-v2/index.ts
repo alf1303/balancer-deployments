@@ -26,7 +26,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
     input.InitialPauseWindowDuration,
     input.BufferPeriodDuration,
   ];
-
+  console.log(args);
   const factory = await task.deployAndVerify('ManagedPoolFactory', args, from, force, {
     CircuitBreakerLib: circuitBreakerLib.address,
     ManagedPoolAddRemoveTokenLib: addRemoveTokenLib.address,
@@ -55,6 +55,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
       aumFeeId: 2,
     };
 
+    // console.log(newManagedPoolSettings);
     const newManagedPoolConfig = {
       vault: input.Vault,
       protocolFeeProvider: input.ProtocolFeePercentagesProvider,
@@ -66,6 +67,8 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
     };
     // The pauseWindowDuration and bufferPeriodDuration will be filled in later, but we need to declare them here to
     // appease the type system. Those are constructor arguments, but automatically provided by the factory.
+
+    // console.log(newManagedPoolConfig);
     const mockPoolArgs = {
       params: newManagedPoolParams,
       config: newManagedPoolConfig,
@@ -73,6 +76,8 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
       owner: ZERO_ADDRESS,
       salt: ZERO_BYTES32,
     };
+
+    // console.log(mockPoolArgs);
 
     // This mimics the logic inside task.deploy
     if (force || !task.output({ ensure: false })['MockManagedPool']) {

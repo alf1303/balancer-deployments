@@ -19,6 +19,7 @@ import test from './src/test';
 import Task, { TaskMode, TaskStatus } from './src/task';
 import Verifier from './src/verifier';
 import logger, { Logger } from './src/logger';
+
 import {
   checkActionIds,
   checkActionIdUniqueness,
@@ -455,6 +456,22 @@ export default {
         urls: {
           apiURL: 'https://api.ftmscan.com/api',
           browserURL: 'https://ftmscan.com',
+        },
+      },
+      // {
+      //   network: 'gnosis',
+      //   chainId: 421614,
+      //   urls: {
+      //     apiURL: 'https://api-sepolia.arbiscan.io/api',
+      //     browserURL: 'https://sepolia.arbiscan.io/',
+      //   },
+      // },
+      {
+        network: 'gnosis',
+        chainId: 88817,
+        urls: {
+          apiURL: 'https://explorer-testnet.unit0.dev/api',
+          browserURL: 'https://explorer-testnet.unit0.dev',
         },
       },
     ],

@@ -150,6 +150,7 @@ export default class Task {
 
     try {
       if (!this._verifier) return logger.warn('Skipping contract verification, no verifier defined');
+      // if (true) return logger.warn('Skipping contract verification, no verifier defined');
       const url = await this._verifier.call(this, name, address, constructorArguments, libs);
       logger.success(`Verified contract ${name} at ${url}`);
     } catch (error) {
