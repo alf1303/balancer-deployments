@@ -1,7 +1,28 @@
 import { Task, TaskRunOptions } from '@src';
 
 export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise<void> => {
-  const Test_args = ["Test_token1", "Test1", "355000000000000000000000"];
-  const Test = await task.deployAndVerify('CustomToken', Test_args, from, force);
-  console.log("Deployed Test:", Test.address);
+  // const pz_args = ["Puzzle Token", "PUZZLE", "355000000000000000000000"];
+  // const weth_args = ["Wrapped Ether", "WETH", "355000000000000000000000"];
+  // const swopfi_args = ["Swopfi Token", "SWOP", "355000000000000000000000"];
+  // const wx_args = ["WX Token", "WX", "355000000000000000000000"];
+  const usdt_args = ["USDT Token", "pUSDT", 6, "900000000000"];
+  const usdc_args = ["USDC Token", "pUSDC", 6, "900000000000"];
+  const boba_args = ["Boba Token", "pBOBA", 18, "900000000000000000000000"];
+  const eagle_args = ["Eagle Token", "pEAGLE", 18, "900000000000000000000000"];
+  // const pz = await task.deployAndVerify('CustomToken', pz_args, from, force);
+  // console.log("Deployed Puzzle:", pz.address);
+  // const weth = await task.deployAndVerify('CustomToken', weth_args, from, force);
+  // console.log("Deployed WETH:", weth.address);
+  // const swopfi = await task.deployAndVerify('CustomToken', swopfi_args, from, force);
+  // console.log("Deployed SWOPFI:", swopfi.address);
+  // const wx = await task.deployAndVerify('CustomToken', wx_args, from, force);
+  // console.log("Deployed WX:", wx.address);
+  const usdt = await task.deployAndVerify('CustomToken', usdt_args, from, force);
+  console.log("Deployed USDT:", usdt.address);
+  const usdc = await task.deployAndVerify('CustomToken', usdc_args, from, force);
+  console.log("Deployed USDC:", usdc.address);
+  const boba = await task.deployAndVerify('CustomToken', boba_args, from, force);
+  console.log("Deployed BOBA:", boba.address);
+  const eagle = await task.deployAndVerify('CustomToken', eagle_args, from, force);
+  console.log("Deployed EAGLE:", eagle.address);
 };

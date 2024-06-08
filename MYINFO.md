@@ -1,5 +1,8 @@
 yarn extract-artifacts --id 11111111-tokens
 
+network config:  ~/.hardhat/networks.json, hardhat.config.ts
+
+0) Deploy WETH: yarn hardhat deploy --id 00001111-wunit0 --network gnosis --force
 1) Deploy tokens: 
    yarn hardhat deploy --id 11111111-tokens --network gnosis --force
 2) add tokens to /home/rex/projects/other/balancer-deployments/tasks/00000000-tokens/output/gnosis.json
