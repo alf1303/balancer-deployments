@@ -9,6 +9,7 @@ import { WeightedPoolDeployment } from './input';
 
 export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise<void> => {
   const input = task.input() as WeightedPoolDeployment;
+  console.log(input)
 
   const args = [input.Vault, input.ProtocolFeePercentagesProvider, input.FactoryVersion, input.PoolVersion];
   const factory = await task.deployAndVerify('WeightedPoolFactory', args, from, force);

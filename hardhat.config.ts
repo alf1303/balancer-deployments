@@ -410,11 +410,11 @@ export default {
     timeout: 600000,
   },
   solidity: {
-    version: '0.7.1',
+    version: '0.7.6',
     settings: {
       optimizer: {
         enabled: true,
-        runs: 9999,
+        runs: 2000,
       },
     },
   },
@@ -474,6 +474,14 @@ export default {
           browserURL: 'https://explorer-testnet.unit0.dev',
         },
       },
+      // {
+      //   network: 'gnosis',
+      //   chainId: 88811,
+      //   urls: {
+      //     apiURL: 'https://explorer.unit0.dev/api',
+      //     browserURL: 'https://explorer.unit0.dev',
+      //   },
+      // },
     ],
   },
 };

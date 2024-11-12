@@ -12,10 +12,15 @@ For verification check net config in bottom of hardhat.config.ts and ~/.hardhat/
 set proper admin address in actual network section in tasks/authorizer/input.ts
 yarn hardhat deploy --id 20210418-authorizer --network gnosis --force
 yarn hardhat deploy --id 20210418-vault --network gnosis --force
+** if ProtocolFeeCollectors is not verified, then after few minutes set proper addresses in 00001122-protocol_verify/index.ts and run 'yarn hardhat deploy --id 00001122-protocol_verify --network gnosis --force'
 yarn hardhat deploy --id 20220325-authorizer-adaptor --network gnosis --force
 yarn hardhat deploy --id 20221124-authorizer-adaptor-entrypoint --network gnosis --force
 yarn hardhat deploy --id 20230414-authorizer-wrapper --network gnosis --force
-4) Set vault's authorizer to authorizer-wrapper address
+
+4) Set vault's authorizer to authorizer-wrapper address:
+   - get proper action (role) id by calling Vault's method getActionId('0x058a628f') where '0x058a628f' is method identificator for setAuthorizer   method
+   - call grantRole method on Authorizer contract, using action_id and address of admin account
+   - call setAuthorizer method on Vault's contract from admin account
 
 Deploying WeightedPool:
 1) yarn hardhat deploy --id 20220725-protocol-fee-percentages-provider --network gnosis --force
@@ -34,3 +39,6 @@ NODE_ENDPOINT=http://172.16.239.1:8545 docker-compose up
 docker-compose down -v --> stop explorer and remove chain data
 
 deployments settings (network and account) ~/.hardhat/networks.json
+
+NOTES:
+1) Sometimes Vault contract can fail with INSUFFICIENT_GAS Error. Then set runs option in optimizer in hardhat.config.ts to 200 or higher

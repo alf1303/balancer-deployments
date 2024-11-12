@@ -21,6 +21,7 @@ export async function deploy(
 
   const { ethers } = await import('hardhat');
   const factory = await ethers.getContractFactoryFromArtifact(artifact, { libraries: libs });
+  console.log("bladibula");
   const deployment = await factory.connect(from).deploy(...args);
   return deployment.deployed();
 }
